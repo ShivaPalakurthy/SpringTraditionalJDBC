@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	    xmlns:p="http://www.springframework.org/schema/p"
+	    xmlns:context="http://www.springframework.org/schema/context"
+	    xsi:schemaLocation="http://www.springframework.org/schema/beans
+	    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	    http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ <bean class="com.springcoretradionalJDBC.Model.Admin" id="bean"> 
+ <property name="adminid" value="269"/>
+ <property name="adminname" value="Vivek"/>
+ <property name="adminmail" value="Vivek@gmail.com"/>
+ <property name="pass" value="124689"/>
+</bean>   
+<bean id="adao" class="com.springcoretradionalJDBC.dao.AdminDAOImpl"/>
+<bean id="bean1" class="com.springcoretradionalJDBC.service.AdminServiceImpl">
+<property name="dao" ref="adao"/>
+</bean>
+<bean id="service" class="com.springcoretradionalJDBC.presentation.MainApp">
+<property name="service" ref="bean1"/></bean> 
+</beans>
+
+ 
